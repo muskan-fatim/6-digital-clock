@@ -44,7 +44,7 @@ let start = setInterval(()=>{
   },1000)
 
 useEffect(() => 
-    return () => clearInterval(interval);
+    return () => clearInterval(start);
   }, []);
   
 
