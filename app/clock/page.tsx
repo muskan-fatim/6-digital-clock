@@ -1,5 +1,5 @@
 'use client'
-import { useState } from "react";
+import { useState ,useEffect} from "react";
 
 export default function Clock() {
 let [time, settime] = useState("")
