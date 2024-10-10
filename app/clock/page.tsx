@@ -4,7 +4,7 @@ import { useState } from "react";
 export default function Clock() {
 let [time, settime] = useState("")
   function hour24format(){
-  let a = setInterval(()=>{
+let start = setInterval(()=>{
    let date = new Date()
    let hour = date.getHours();
    let minute = date.getMinutes();
@@ -13,8 +13,7 @@ let [time, settime] = useState("")
     let timeString = hour + ':' + minute +  ":" + seconds + " " + ampm; 
     settime(timeString)
   },1000)
-
-
+    
   
 }
  function hour12formate(){
@@ -32,8 +31,6 @@ let [time, settime] = useState("")
       settime(timeString)
 
   },1000)
-       clearInterval(start)
-
   
 }
   let start = setInterval(()=>{
@@ -46,8 +43,10 @@ let [time, settime] = useState("")
     settime(timeString)
   },1000)
 
-
-
+useEffect(() => 
+    return () => clearInterval(interval);
+  }, []);
+  
 
 
 
