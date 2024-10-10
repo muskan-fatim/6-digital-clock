@@ -12,7 +12,6 @@ let [time, settime] = useState("")
    let ampm = hour >= 12 ? 'PM' : 'AM';
     let timeString = hour + ':' + minute +  ":" + seconds + " " + ampm; 
     settime(timeString)
-    clearInterval(start)
   },1000)
 
 
@@ -33,6 +32,8 @@ let [time, settime] = useState("")
       settime(timeString)
 
   },1000)
+       clearInterval(start)
+
   
 }
   let start = setInterval(()=>{
